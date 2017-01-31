@@ -5,10 +5,10 @@
 	<title>Document</title>
 </head>
 <body>
-	<form action='/movies' method='POST'>
-    <label>Title</label> <input type='text' name='title' />
-    <label>Synopsis</label><input type="text" name='synopsis' />
-    <button type='submit'>Submit</button>
+	<form action="<%= `/movies/${movie.id}?_method=PUT` %>" method="POST">
+    <label>Title</label> <input type="text" name="title" value="<%=movie.title %>"/>
+    <label>Synopsis</label><textarea name="synopsis"> <%=movie.synopsis %></textarea>
+    <button type="submit">Submit</button>
   </form>
 </body>
 </html>

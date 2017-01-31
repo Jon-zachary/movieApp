@@ -7,8 +7,10 @@ var bodyParser = require('body-parser');
 var movies = require('./routes/movies');
 var index = require('./routes/index');
 var users = require('./routes/users');
+var methodOverride = require('method-override');
 require('dotenv').config();
 var app = express();
+app.use(methodOverride('_method'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
