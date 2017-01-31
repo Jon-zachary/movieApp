@@ -28,3 +28,9 @@ node_modules
 
 # Debug log from npm
 npm-debug.log
+
+# dot env file
+.env
+
+# node modules
+node_modules
