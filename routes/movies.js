@@ -21,5 +21,11 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
+router.get('/:id/edit', function(req, res, next) {
+  models.Movie.findById(req.params.id).then(function(movie) {
+    res.render('movies/edit', { movie: movie });
+  });
+});
+
 module.exports = router;
 
