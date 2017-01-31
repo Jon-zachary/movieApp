@@ -6,10 +6,12 @@
 </head>
 <body>
 <% movies.forEach(function(movie) { %>
-      <div>
-       <%= movie.title %>
-      </div>
-    <% }); %>
+  <div>
+  <%= movie.title %>
+  <button href=`/movies/${movie.id}`>Edit</button>
+  <button>Delete</button>
+  </div>
+<% }); %>
 
 	
 </body>
