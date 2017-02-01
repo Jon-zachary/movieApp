@@ -12,7 +12,6 @@ var auth = require('./routes/auth');
 var movies = require('./routes/movies');
 var index = require('./routes/index');
 //var users = require('./routes/users');
-var methodOverride = require('method-override');
 
 require('dotenv').config();
 var app = express();
@@ -23,10 +22,16 @@ app.use(methodOverride('_method'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(session({
+  secret: process.env.SECRET_KEY,
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(cookieParser());
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
@@ -35,6 +40,10 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', index);
+app.use('/auth', auth);
+app.use('/users', users);
 
 
 
