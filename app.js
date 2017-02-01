@@ -34,7 +34,11 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+<<<<<<< HEAD
 
+=======
+app.use('/users', users);
+>>>>>>> deleting unnecessary files
 app.use('/directors', directors);
 
 
