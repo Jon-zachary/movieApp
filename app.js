@@ -6,26 +6,24 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-
-<<<<<<< HEAD
-
-=======
-var index = require('./routes/index');
-var users = require('./routes/users');
->>>>>>> adaa83a62c5dfce78d6ebfd1e2f7aef87bfefb20
 var directors= require('./routes/directors');
 
-require('dotenv').config();
 
+var movies = require('./routes/movies');
+var index = require('./routes/index');
+var users = require('./routes/users');
+var methodOverride = require('method-override');
+
+require('dotenv').config();
 var app = express();
-// override with POST having ?_method=DELETE
+
 app.use(methodOverride('_method'));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -39,19 +37,15 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
+
 app.use('/users', users);
->>>>>>> deleting unnecessary files
-=======
-app.use('/users', users);
->>>>>>> adaa83a62c5dfce78d6ebfd1e2f7aef87bfefb20
 app.use('/directors', directors);
 
 
-// catch 404 and forward to error handler
+
+app.use('/movies',movies);
+
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
