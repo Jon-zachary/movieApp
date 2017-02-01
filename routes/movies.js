@@ -3,10 +3,10 @@ var router = express.Router();
 var models = require('../db/models/index.js');
 
 router.delete('/:id', function(req,res,next){
-  models.User.destroy({
+  models.Movie.destroy({
     where: {id: req.params.id}
-  }).then(function(user) {
-    res.redirect('/users');
+  }).then(function(movies) {
+    res.redirect('/movies');
   });
 });
 

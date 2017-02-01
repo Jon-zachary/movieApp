@@ -8,8 +8,10 @@
 <% movies.forEach(function(movie) { %>
   <div>
   <%= movie.title %>
-  <button href=`/movies/${movie.id}`>Edit</button>
-  <button>Delete</button>
+  <a href="<%= `/movies/${movie.id}/edit` %>"><button>Edit</button></a>
+  <form action="<%= `/movies/${movie.id}?_method=DELETE` %>" method="POST">
+   <button type="submit">Delete</button>
+  </form>
   </div>
 <% }); %>
 
