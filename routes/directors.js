@@ -43,7 +43,7 @@ router.delete('/:id', function(req, res, next) {
 
 router.get('/:id/edit', function(req, res, next) {
   models.Director.findById(req.params.id).then(function(directors) {
-    res.render('editdirectors', { directors: directors });
+    res.render('directors/editdirectors', { directors: directors });
   });
 });
 
