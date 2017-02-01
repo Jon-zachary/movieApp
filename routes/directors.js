@@ -6,11 +6,14 @@ var models = require('../db/models/index');
 router.get('/', function(req,res,next){
   models.Director.findAll({})
     .then(function(directors){
+      // sort by director id
+      //directors.id.sort(function(a, b){return a-b});
       res.render('directors', {
         name: directors.name,
         directors: directors,
         id: directors.id
       });
+      directors.sort();
     });
 });
 
@@ -41,6 +44,19 @@ router.delete('/:id', function(req, res, next) {
   });
 });
 
+router.get('/:id/edit', function(req, res, next) {
+  models.Director.findById(req.params.id).then(function(directors) {
+    res.render('editdirectors', { directors: directors });
+  });
+});
+
+router.put('/:id', function(req, res, next) {
+  models.Director.update({
+    name: req.body.name
+  }, { where: { id: req.params.id } }).then(function() {
+    res.redirect('/directors');
+  });
+});
 
 
 
