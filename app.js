@@ -11,7 +11,7 @@ var directors= require('./routes/directors');
 
 var movies = require('./routes/movies');
 var index = require('./routes/index');
-var users = require('./routes/users');
+//var users = require('./routes/users');
 var methodOverride = require('method-override');
 
 require('dotenv').config();
@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-app.use('/users', users);
+//app.use('/users', users);
 app.use('/directors', directors);
 
 
