@@ -7,7 +7,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 
+<<<<<<< HEAD
 
+=======
+var index = require('./routes/index');
+var users = require('./routes/users');
+>>>>>>> adaa83a62c5dfce78d6ebfd1e2f7aef87bfefb20
 var directors= require('./routes/directors');
 
 require('dotenv').config();
@@ -35,10 +40,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 app.use('/users', users);
 >>>>>>> deleting unnecessary files
+=======
+app.use('/users', users);
+>>>>>>> adaa83a62c5dfce78d6ebfd1e2f7aef87bfefb20
 app.use('/directors', directors);
 
 

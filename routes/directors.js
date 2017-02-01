@@ -6,11 +6,20 @@ var models = require('../db/models/index');
 router.get('/', function(req,res,next){
   models.Director.findAll({})
     .then(function(directors){
+<<<<<<< HEAD
+=======
+      // sort by director id
+      //directors.id.sort(function(a, b){return a-b});
+>>>>>>> adaa83a62c5dfce78d6ebfd1e2f7aef87bfefb20
       res.render('directors/directors', {
         name: directors.name,
         directors: directors,
         id: directors.id
       });
+<<<<<<< HEAD
+=======
+      directors.sort();
+>>>>>>> adaa83a62c5dfce78d6ebfd1e2f7aef87bfefb20
     });
 });
 
@@ -18,7 +27,11 @@ router.post('/', function(req, res, next) {
   models.Director.create({
     name: req.body.name
   }).then(function() {
+<<<<<<< HEAD
     res.redirect('directors/directors')
+=======
+    res.redirect('/directors')
+>>>>>>> adaa83a62c5dfce78d6ebfd1e2f7aef87bfefb20
   });
 });
 
@@ -37,7 +50,11 @@ router.delete('/:id', function(req, res, next) {
   models.Director.destroy({
     where: { id: req.params.id }
   }).then(function(directors) {
+<<<<<<< HEAD
     res.redirect('directors/directors');
+=======
+    res.redirect('/directors');
+>>>>>>> adaa83a62c5dfce78d6ebfd1e2f7aef87bfefb20
   });
 });
 
