@@ -4,7 +4,7 @@ var models = require('../db/models/index');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('directors/index', { title: 'Express' });
 });
 
 router.get('/direc', function(req, res, next) {

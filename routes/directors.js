@@ -8,7 +8,7 @@ router.get('/', function(req,res,next){
     .then(function(directors){
       // sort by director id
       //directors.id.sort(function(a, b){return a-b});
-      res.render('directors', {
+      res.render('directors/directors', {
         name: directors.name,
         directors: directors,
         id: directors.id
@@ -26,13 +26,13 @@ router.post('/', function(req, res, next) {
 });
 
 router.get('/new', function(req, res, next) {
-  res.render('newdirectors');
+  res.render('directors/newdirectors');
 });
 
 
 router.get('/:id', function(req, res, next) {
   models.Director.findById(req.params.id).then(function(directors) {
-    res.render('showdirectors', {directors: directors });
+    res.render('directors/showdirectors', {directors: directors });
   });
 });
 
@@ -46,7 +46,7 @@ router.delete('/:id', function(req, res, next) {
 
 router.get('/:id/edit', function(req, res, next) {
   models.Director.findById(req.params.id).then(function(directors) {
-    res.render('editdirectors', { directors: directors });
+    res.render('directors/editdirectors', { directors: directors });
   });
 });
 
