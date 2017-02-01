@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+<li><%= directors.name%></li>
+<form method="POST" action="<%= `/directors/${directors.id}/?_method=DELETE` %>">
+<button>X</button>
+</form>
+<a href= " <%= `./${directors.id}/edit`%>  ">edit</a>
+
+  </body>
+</html>
