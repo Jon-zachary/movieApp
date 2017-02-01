@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+ <% directors.forEach(function(directors) { %>
+      <div>
+         <a href="directors/<%= directors.id%>"><li><%= directors.name %></li></a>
+         <form method="POST" action="<%= `/directors/${directors.id}/?_method=DELETE` %>">
+<button>X</button>
+</form>
+      </div>
+ <% }) %>
+
+  </body>
+</html>
