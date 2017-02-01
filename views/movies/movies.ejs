@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+</head>
+<body>
+<%  %>
+<% movies.forEach(function(movie) { %>
+  <div>
+  <%= movie.title %>
+  <button href=`/movies/${movie.id}`>Edit</button>
+  <button onClick="">Delete</button>
+  </div>
+<% }); %>
+
+
+</body>
+</html>
