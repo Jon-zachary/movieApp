@@ -9,7 +9,7 @@ const passport = require('passport');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
-// const auth = require('./routes/auth');
+const auth = require('./routes/auth');
 require('dotenv').config();
 const app = express();
 
@@ -42,7 +42,7 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-// app.use('/auth', auth);
+app.use('/auth', auth);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

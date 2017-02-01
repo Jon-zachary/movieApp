@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+
 const models = require('../db/models/index');
 
 function comparePass(userPassword, databasePassword) {
@@ -22,7 +23,19 @@ function createUser(req, res) {
     lastName: req.body.lastName,
     email: req.body.email,
     dob: req.body.dob
-  }).then(() => {
-    res.redirect('/');
+  // }).then(() => {
+  //   res.redirect('/');
   });
 }
+
+function loginRequired(req, res, next) {
+  if (!req.user) res.redirect('/auth/login');
+  return next();
+}
+
+module.exports = {
+  comparePass,
+  loginRedirect,
+  loginRequired,
+  createUser
+};
