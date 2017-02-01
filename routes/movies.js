@@ -2,7 +2,13 @@ var express = require('express');
 var router = express.Router();
 var models = require('../db/models/index.js');
 
-
+router.delete('/:id', function(req,res,next){
+  models.Movie.destroy({
+    where: {id: req.params.id}
+  }).then(function(movies) {
+    res.redirect('/movies');
+  });
+});
 
 router.get('/new', function(req, res, next) {
   res.render("movies/new");
@@ -40,18 +46,12 @@ router.put('/:id', function(req, res, next) {
   });
 });
 
+
+
 router.post('/', function(req, res, next) {
   models.Movie.create({
     title: req.body.title,
     synopsis: req.body.synopsis
-  }).then(function(movies) {
-    res.redirect('/movies');
-  });
-});
-
-router.delete('/:id', function(req,res,next){
-  models.Movie.destroy({
-    where: {id: req.params.id}
   }).then(function(movies) {
     res.redirect('/movies');
   });

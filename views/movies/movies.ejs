@@ -14,14 +14,14 @@
             <li>
               <div class="collapsible-header"><%= movie.title %></div>
                 <div class="collapsible-body">
-                        <form action="<%= `/movies/${movie.id}?_method=DELETE` %>" method="POST">
-                             <button type="submit">Delete</button>
-                            </form>
-                          <span>
-                            <a href="<%= `/movies/${movie.id}/edit` %>">
-                              <button>Edit</button>
-                            </a>
-                          </span>
+                      <form action="<%= `/movies/${movie.id}?_method=DELETE` %>" method="POST">
+                      <button type="submit">Delete</button>
+                    </form>
+                  <span>
+                    <a href="<%= `/movies/${movie.id}/edit` %>">
+                      <button>Edit</button>
+                    </a>
+                  </span>
                 </div>
             </li>
           </ul>
@@ -32,3 +32,4 @@
 <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>
+

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+<form method="POST" action="<%= `/directors/${directors.id}/?_method=PUT` %>">
+<label> Name
+  <input type ="text" name="name" placeholder="<%= directors.name%>">
+</label>
+<button>X</button>
+</form>
+
+  </body>
+</html>
