@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title><%= title %></title>
-</head>
+   <title><%= title %></title>
+<% include ../partials/templates/head.ejs %>
+
 <body>
-<%  %>
-<% movies.forEach(function(movie) { %>
-  <div>
-  <%= movie.title %>
-  <button href=`/movies/${movie.id}`>Edit</button>
-  <button onClick="">Delete</button>
+  <div class="container">
+      <h1>Movie DB Title</h1>
+          <div class="col s12"></div>
+
+      <div class="row">
+        <% movies.forEach(function(movie){ %>
+          <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header"><%= movie.title %></div>
+                <div class="collapsible-body">
+                        <form action="<%= `/movies/${movie.id}?_method=DELETE` %>" method="POST">
+                             <button type="submit">Delete</button>
+                            </form>
+                          <span>
+                            <a href="<%= `/movies/${movie.id}/edit` %>">
+                              <button>Edit</button>
+                            </a>
+                          </span>
+                </div>
+            </li>
+          </ul>
+        <% }); %>
+      </div>
   </div>
-<% }); %>
-
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>

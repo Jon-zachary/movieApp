@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Raleway|Roboto');
+@import '_variables.scss';//colors & variables
+@import 'materialize.css';
+
+
+html, body{
+  font: 25px "Lato";
+  max-width: 800px;
+  color:$aqua;
+}
+.row{
+
+  line-height:2em;
+}
+.s12{
+  background-color: $navBackground;
+}
+.collapsible-header:hover{
+  color:;
+}

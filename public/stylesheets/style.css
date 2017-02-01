@@ -1,2 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Raleway|Roboto");
+@import url(materialize.css);
+html, body {
+  font: 25px "Lato";
+  max-width: 800px;
+  color: #E24E42; }
+
+.row {
+  line-height: 2em; }
+
+.s12 {
+  background-color: rgba(255, 35, 68, 0.6); }
 
 /*# sourceMappingURL=style.css.map */
