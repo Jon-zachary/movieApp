@@ -3,12 +3,15 @@
 html, body {
   font: 25px "Lato";
   max-width: 800px;
-  color: #E24E42; }
+  color: #0f78e0; }
 
 .row {
   line-height: 2em; }
 
 .s12 {
   background-color: rgba(255, 35, 68, 0.6); }
+
+.collapsible-header:hover {
+  color: #E24E42; }
 
 /*# sourceMappingURL=style.css.map */
