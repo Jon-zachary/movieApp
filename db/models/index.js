@@ -22,9 +22,6 @@ if (config.use_env_variable) {
 
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 
-
-  var sequelize = new Sequelize(config.database, config.username, config.password, config);
-
 }
 
 fs
@@ -44,6 +41,6 @@ Object.keys(db).forEach(function(modelName) {
 });
 
 db.sequelize = sequelize;
-db.Sequelize = Sequelize;
+
 
 module.exports = db;

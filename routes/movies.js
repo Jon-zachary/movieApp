@@ -13,7 +13,7 @@ router.delete('/:id', function(req,res,next){
 router.get('/new', function(req, res, next) {
   res.render("movies/new");
 });
-//defines a route for the /movie page that passes the movies array to the ejs 
+//defines a route for the /movie page that passes the movies array to the ejs
 //page where we use forEach to display the title.
 router.get('/', function(req, res, next) {
  models.Movie.findAll({}).then(function(movies) {
@@ -58,4 +58,3 @@ router.post('/', function(req, res, next) {
 });
 
 module.exports = router;
-
