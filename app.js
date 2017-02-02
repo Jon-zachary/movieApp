@@ -36,13 +36,7 @@ app.use(require('node-sass-middleware')({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-<<<<<<< HEAD
-=======
 
-
-
-
->>>>>>> master
 //app.use('/users', users);
 
 app.use('/directors', directors);
